@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:cbtypes="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/cbTypes/v1" xmlns:fault="http://www.gruposantander.es/webservices/genericFault" xmlns:faultExceptions="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/functionalFaults/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/intranet/intranet/ACFACSEGSecurity/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/intranet/ACFACSEGSecurity/v1">
+    <documentation>Adaptador de canal para la Fachada Técnica de Seguridad</documentation>
+    <types> 
+        <xs:schema targetNamespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/intranet/ACFACSEGSecurity/v1">
+            <xs:import namespace="http://www.gruposantander.es/webservices/genericFault" schemaLocation="./schemas/facseg/fault.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/functionalFaults/v1" schemaLocation="./schemas/facseg/ACFACSEGSecurity_functionalFaults_v1.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/cbTypes/v1" schemaLocation="./schemas/facseg/ACFACSEGSecurity_cb_types_v1.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./schemas/facseg/ws_TDCs.xsd"/>
+            <xs:element name="getLoggedUserToken">
+                <xs:complexType>
+                    <xs:sequence/>
+                    <xs:attribute fixed="ACFACSEGSecurity" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLoggedUserTokenResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="TDCs:DIGITAL_SIGNATURE_Type">
+                            <xs:annotation>
+                                <xs:documentation>El token del usuario logado en el sistema</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verifyCredential">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="CB_CredentialData" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_CredentialData_Type">
+                            <xs:annotation>
+                                <xs:documentation>Credencial a verificar de tipo cookie o token</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="userAddress" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type">
+                            <xs:annotation>
+                                <xs:documentation>Dirección IP a validar en la cookie</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ACFACSEGSecurity" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verifyCredentialResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:annotation>
+                            <xs:documentation>No retorna datos, si hay algun error saldra por la excepcion de negocio correspondiente.</xs:documentation>
+                        </xs:annotation>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+    <message name="getLoggedUserToken_Input">
+        <part element="tns:getLoggedUserToken" name="getLoggedUserToken_InputPart"/>
+    </message>
+    <message name="getLoggedUserToken_Output">
+        <part element="tns:getLoggedUserTokenResponse" name="getLoggedUserToken_OutputPart"/>
+    </message>
+    <message name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_NoLoggedUser_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_NoLoggedUser" name="com.isb.al.facseg.security.exc.EX_NoLoggedUser_FaultPart"/>
+    </message>
+    <message name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_TechnicalError" name="com.isb.al.facseg.security.exc.EX_TechnicalError_FaultPart"/>
+    </message>
+    <message name="getLoggedUserToken_Fault">
+        <part element="fault:Exception" name="getLoggedUserToken_FaultPart"/>
+    </message>
+    <message name="verifyCredential_Input">
+        <part element="tns:verifyCredential" name="verifyCredential_InputPart"/>
+    </message>
+    <message name="verifyCredential_Output">
+        <part element="tns:verifyCredentialResponse" name="verifyCredential_OutputPart"/>
+    </message>
+    <message name="verifyCredential_com.isb.al.facseg.security.exc.EX_ExpiredCredential_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_ExpiredCredential" name="com.isb.al.facseg.security.exc.EX_ExpiredCredential_FaultPart"/>
+    </message>
+    <message name="verifyCredential_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_TechnicalError" name="com.isb.al.facseg.security.exc.EX_TechnicalError_FaultPart"/>
+    </message>
+    <message name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidCredential_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_InvalidCredential" name="com.isb.al.facseg.security.exc.EX_InvalidCredential_FaultPart"/>
+    </message>
+    <message name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidParameters_Fault">
+        <part element="faultExceptions:com.isb.al.facseg.security.exc.EX_InvalidParameters" name="com.isb.al.facseg.security.exc.EX_InvalidParameters_FaultPart"/>
+    </message>
+    <message name="verifyCredential_Fault">
+        <part element="fault:Exception" name="verifyCredential_FaultPart"/>
+    </message>
+    <portType name="ACFACSEGSecurityPortTypeHTTP">
+        <operation name="verifyCredential">
+            <documentation>Verifica una cookie o un token contra las claves del repositorio local.</documentation>
+            <input message="tns:verifyCredential_Input" name="verifyCredential_Input"/>
+            <output message="tns:verifyCredential_Output" name="verifyCredential_Output"/>
+            <fault message="tns:verifyCredential_com.isb.al.facseg.security.exc.EX_ExpiredCredential_Fault" name="verifyCredential_com.isb.al.facseg.security.exc.EX_ExpiredCredential_Fault"/>
+            <fault message="tns:verifyCredential_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault" name="verifyCredential_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault"/>
+            <fault message="tns:verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidCredential_Fault" name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidCredential_Fault"/>
+            <fault message="tns:verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidParameters_Fault" name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidParameters_Fault"/>
+            <fault message="tns:verifyCredential_Fault" name="verifyCredential_Fault"/>
+        </operation>
+        <operation name="getLoggedUserToken">
+            <documentation>Recoge el token del usuario logado en el sistema</documentation>
+            <input message="tns:getLoggedUserToken_Input" name="getLoggedUserToken_Input"/>
+            <output message="tns:getLoggedUserToken_Output" name="getLoggedUserToken_Output"/>
+            <fault message="tns:getLoggedUserToken_com.isb.al.facseg.security.exc.EX_NoLoggedUser_Fault" name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_NoLoggedUser_Fault"/>
+            <fault message="tns:getLoggedUserToken_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault" name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault"/>
+            <fault message="tns:getLoggedUserToken_Fault" name="getLoggedUserToken_Fault"/>
+        </operation>
+    </portType>
+    <binding name="ACFACSEGSecuritySoapBindingHTTP" type="tns:ACFACSEGSecurityPortTypeHTTP">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="verifyCredential">
+            <soap:operation soapAction="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/intranet/ACFACSEGSecurity/v1/verifyCredential" style="document"/>
+            <input name="verifyCredential_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="verifyCredential_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_ExpiredCredential_Fault">
+                <soap:fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_ExpiredCredential_Fault" use="literal"/>
+            </fault>
+            <fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault">
+                <soap:fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault" use="literal"/>
+            </fault>
+            <fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidCredential_Fault">
+                <soap:fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidCredential_Fault" use="literal"/>
+            </fault>
+            <fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidParameters_Fault">
+                <soap:fault name="verifyCredential_com.isb.al.facseg.security.exc.EX_InvalidParameters_Fault" use="literal"/>
+            </fault>
+            <fault name="verifyCredential_Fault">
+                <soap:fault name="verifyCredential_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getLoggedUserToken">
+            <soap:operation soapAction="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/intranet/ACFACSEGSecurity/v1/getLoggedUserToken" style="document"/>
+            <input name="getLoggedUserToken_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="getLoggedUserToken_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_NoLoggedUser_Fault">
+                <soap:fault name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_NoLoggedUser_Fault" use="literal"/>
+            </fault>
+            <fault name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault">
+                <soap:fault name="getLoggedUserToken_com.isb.al.facseg.security.exc.EX_TechnicalError_Fault" use="literal"/>
+            </fault>
+            <fault name="getLoggedUserToken_Fault">
+                <soap:fault name="getLoggedUserToken_Fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="ACFACSEGSecurity_Service">
+        <port binding="tns:ACFACSEGSecuritySoapBindingHTTP" name="ACFACSEGSecurityPortHTTP">
+            <soap:address location="http://seb.isban.dev.corp/SSOSEBIntraTokenAS/ws/SECMR_Def_Listener"/>
+        </port>
+    </service>
+</definitions>

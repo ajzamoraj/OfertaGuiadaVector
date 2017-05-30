@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDC_Simple="http://www.isban.es/webservices/TDCs" xmlns:tns="http://www.isban.es/webservices/TDCc" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/TDCc">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:complexType name="DESCRIPCION_TRADUCIBLE_Type">
+          <xs:sequence>
+               <xs:element name="CLAVE_CONCATENADA" type="TDC_Simple:CLAVE_CONCATENADA_Type"/>
+               <xs:element name="CODIGO_TIPO_DE_DATO" type="TDC_Simple:CODIGO_TIPO_DE_DATO_Type"/>
+               <xs:element name="FORMATO_TEXTO" type="TDC_Simple:FORMATO_TEXTO_Type"/>
+               <xs:element name="IDIOMA_CORPORATIVO" type="tns:IDIOMA_CORPORATIVO_Type"/>
+               <xs:element name="CONCEPTO" type="TDC_Simple:COD_ALFANUM_3_Type"/>
+               <xs:element name="DESCRIPCION" type="TDC_Simple:DESCRIPCION_EXTRALARGA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="IDIOMA_CORPORATIVO_Type">
+          <xs:sequence>
+               <xs:element name="IDIOMA_ISO" type="TDC_Simple:IDIOMA_ISO_Type"/>
+               <xs:element name="DIALECTO_ISO" type="TDC_Simple:DIALECTO_ISO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="NUM_PERSONA_CLIENTE_Type">
+          <xs:sequence>
+               <xs:element name="TIPO_DE_PERSONA" type="TDC_Simple:TIPO_DE_PERSONA_Type"/>
+               <xs:element name="CODIGO_DE_PERSONA" type="TDC_Simple:NUMERO_DE_PERSONA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="DOCUM_PERSONA_CORPORATIVO_Type">
+          <xs:sequence>
+               <xs:element name="TIPO_DOCUM_PERSONA_CORP" type="TDC_Simple:TIPO_DOCUM_PERSONA_CORP_Type"/>
+               <xs:element name="CODIGO_DOCUM_PERSONA_CORP" type="TDC_Simple:STRING_30_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+</xs:schema>
