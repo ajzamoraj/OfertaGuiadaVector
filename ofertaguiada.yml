@@ -39,41 +39,7 @@ security:
 
 spring: 
   application:
-    name: ppi-back  
-  datasource:
-    platform: Postgres
-    driverClassName: org.postgresql.Driver
-#    DEV
-    url: jdbc:postgresql://180.106.132.51:5432/PPI_ONLINE_FORMS
-    username: postgres
-    password: Vector-2017
-  jpa:
-    show-sql: true    
-
-    #Local
-#    url: jdbc:postgresql://localhost:5432/springbootdb
-#    username: postgres
-#    password: jorge
-        #Paas
-#    url: jdbc:postgresql://ppi-sql-ppi-form-test1-dev.appls.cap1.paas.gsnetcloud.corp:5432/ppi_workflow/;
-#    username: ppi_user
-#    password: ppi_user
-
-
-
-service:
-  mail:
-    mailserver: 
-      host: mailintra.isban.gs.corp
-      port: 25
-      user: noreply@santander.com
-  ftp:
-    ftpserver:
-      host: 180.106.133.42
-      port: 21
-      user: anonymous
-      password:
-      dir:        
+    name: ofertaguiada        
             
 app:
   security:
@@ -87,11 +53,6 @@ app:
     mock:
       user: XXTEST        
     domain: 
-  imgdir: D:\STS_WORKSPACE_PPIQF\ppi-back\src\main\resources\static\images\
-  pdfFileName: ./tmp/
   crossorigin: 
     generatepdf: "*"
     analyzefile: "*"
-ddbb: 
-  delete: 
-    days: 14
