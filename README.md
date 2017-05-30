@@ -1,0 +1,2 @@
+# OfertaGuiadaVector
+Oferta Guiada Vector
