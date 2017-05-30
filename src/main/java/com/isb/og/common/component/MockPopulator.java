@@ -1,4 +1,4 @@
-package com.isb.og.security.common.component;
+package com.isb.og.common.component;
 
 import org.apache.log4j.Logger;
 import org.springframework.util.ReflectionUtils;

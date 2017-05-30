@@ -19,7 +19,9 @@
 
 		<!-- Dependencies version -->
 		<apache.commons.version>3.0</apache.commons.version>
-		<architecture-security.version>0.0.1-SNAPSHOT</architecture-security.version>
+		<!-- <org.apache.commons.lang3.version>3.0</org.apache.commons.lang3.version> -->
+		<swagger.version>2.6.1</swagger.version>
+		<com.santander.serenity.security.version>2.2.0</com.santander.serenity.security.version>
 		
 	</properties>
   
@@ -29,6 +31,11 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
+	
+		<!-- MAVEN prerequisites compilation -->
+	<prerequisites>
+		<maven>3.3.3</maven>
+	</prerequisites>
   
   	<!-- DEPENDENCIES -->
 	<dependencies>
@@ -69,6 +76,32 @@
         <dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+		
+				<!-- Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+			<scope>compile</scope>
+		</dependency>
+       
+	    <dependency>
+		        <groupId>org.springframework</groupId>
+		        <artifactId>spring-context</artifactId>
+		</dependency>
+		
+		<!-- Serenity -->
+		<dependency>
+			<groupId>com.santander.serenity.devstack</groupId>
+			<artifactId>serenity-devstack-security-starter-jwt</artifactId>
+			<version>${com.santander.serenity.security.version}</version>
 		</dependency>
 
 	</dependencies>

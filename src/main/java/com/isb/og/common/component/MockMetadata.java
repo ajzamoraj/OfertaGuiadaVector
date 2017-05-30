@@ -1,4 +1,4 @@
-package com.isb.og.security.common.component;
+package com.isb.og.common.component;
 
 import java.util.HashSet;
 import java.util.Set;

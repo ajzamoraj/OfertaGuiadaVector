@@ -1,5 +1,5 @@
 
-package com.isb.og.security.common.model;
+package com.isb.og.common.model;
 
 import java.io.Serializable;
 import java.util.List;

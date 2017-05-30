@@ -1,4 +1,4 @@
-package com.isb.og.security.common.exception;
+package com.isb.og.common.exception;
 
 public class PpiRuntimeException extends RuntimeException{
 

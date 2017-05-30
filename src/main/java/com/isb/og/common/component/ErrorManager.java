@@ -1,9 +1,9 @@
-package com.isb.og.security.common.component;
+package com.isb.og.common.component;
 
 import java.util.List;
 import java.util.Map;
 
-import com.isb.og.security.common.model.Error;
+import com.isb.og.common.model.Error;
 import com.isb.og.security.form.exception.GenerateDocumentException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;

@@ -1,10 +1,11 @@
 
-package com.isb.og.security.common.model;
+package com.isb.og.common.model;
 
 import java.io.Serializable;
 
 import org.apache.commons.lang3.StringUtils;
-import com.isb.og.security.common.enumerated.EnumErrorLevels;
+
+import com.isb.og.common.enumerated.EnumErrorLevels;
 
 /**
  * Result domain object.

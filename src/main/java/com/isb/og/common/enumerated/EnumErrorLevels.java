@@ -1,4 +1,4 @@
-package com.isb.og.security.common.enumerated;
+package com.isb.og.common.enumerated;
 
 /**
  * Enumerated class with the response error levels.

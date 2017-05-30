@@ -1,11 +1,11 @@
-package com.isb.og.security.common.exception;
+package com.isb.og.common.exception;
 
 /**
- * Custom user not authenticated exception.
+ * Custom use not authorized exception.
  * 
  * @author Vector ITC Group
  */
-public class UnauthenticatedException extends RuntimeException {
+public class UnauthorizedException extends RuntimeException {
     
     private static final long serialVersionUID = -5278005471979069631L;
     
@@ -14,7 +14,7 @@ public class UnauthenticatedException extends RuntimeException {
      * 
      * @param string {@link String}
      */
-    public UnauthenticatedException(final String message) {
+    public UnauthorizedException(final String message) {
         super(message);
     }
 }

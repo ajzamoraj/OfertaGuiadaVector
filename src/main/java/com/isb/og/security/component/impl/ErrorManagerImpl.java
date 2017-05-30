@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.isb.og.security.common.component.ErrorManager;
-import com.isb.og.security.common.enumerated.EnumErrorLevels;
-import com.isb.og.security.common.exception.InvalidParameterException;
-import com.isb.og.security.common.model.Error;
+import com.isb.og.common.component.ErrorManager;
+import com.isb.og.common.enumerated.EnumErrorLevels;
+import com.isb.og.common.exception.InvalidParameterException;
+import com.isb.og.common.model.Error;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
