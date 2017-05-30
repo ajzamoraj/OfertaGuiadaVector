@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.isb.wphg</groupId>
+    <artifactId>architecture-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.isb.wphg</groupId>
+  <artifactId>architecture-security</artifactId>
+  <name>security</name>
+  <description>Modulo de seguridad</description>
+  
+  
+  	<!-- DEPENDENCIES -->
+	<dependencies>
+
+		<!-- Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+
+		<!-- Apache Commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache.commons.version}</version>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Dependencia para WS -->
+		<dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-core</artifactId>
+        </dependency>
+        
+        <!-- Aspectos -->
+        <dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+
+	</dependencies>
+	
+	
+  	<!-- BUILD -->
+	<build>
+
+		<!-- BUILD: PLUGINS -->
+		<plugins>
+
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>facseg</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+	                    <configuration>
+		                    <!-- Package to store the generated file -->
+		                    <packageName>com.isb.wphg.security.wsdl.facseg</packageName>
+		                    <!-- Treat the input as WSDL -->
+		                    <wsdl>true</wsdl>
+		                    <!-- Input is not XML schema -->
+		                    <xmlschema>false</xmlschema>
+		                    <!-- The WSDL file that you saved earlier -->
+		                    <schemaFiles>ACFACSEGSecurity_v1.wsdl</schemaFiles>
+		                    <!-- The location of the WSDL file -->
+		                    <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+		                    <!-- The output directory to store the generated Java files -->
+		                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+		                    <!-- Don't clear output directory on each run -->
+		                    <clearOutputDir>false</clearOutputDir>
+		                </configuration>
+                    </execution>                        
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+  
+	<version>0.0.1-SNAPSHOT</version>
+</project>
