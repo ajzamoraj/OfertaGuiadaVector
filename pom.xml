@@ -1,15 +1,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.isb.wphg</groupId>
-    <artifactId>architecture-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>com.isb.wphg</groupId>
-  <artifactId>architecture-security</artifactId>
-  <name>security</name>
-  <description>Modulo de seguridad</description>
+
+  <groupId>com.isb</groupId>
+  <artifactId>ofertaguiada</artifactId>
+  <name>ofertaguiada</name>
+  <description>Oferta Guiada</description>
+  <version>0.0.1-SNAPSHOT</version>  
   
+  		<!-- PROPERTIES -->
+	<properties>
+
+		<!-- Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- JAVA version -->
+		<java.version>1.8</java.version>
+
+		<!-- Dependencies version -->
+		<apache.commons.version>3.0</apache.commons.version>
+		<architecture-security.version>0.0.1-SNAPSHOT</architecture-security.version>
+		
+	</properties>
+  
+  	<!-- PARENT -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
   
   	<!-- DEPENDENCIES -->
 	<dependencies>
@@ -93,5 +112,4 @@
 		</plugins>
 	</build>
   
-	<version>0.0.1-SNAPSHOT</version>
 </project>
