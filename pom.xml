@@ -92,7 +92,7 @@
                         </goals>
 	                    <configuration>
 		                    <!-- Package to store the generated file -->
-		                    <packageName>com.isb.wphg.security.wsdl.facseg</packageName>
+		                    <packageName>com.isb.og.security.wsdl.facseg</packageName>
 		                    <!-- Treat the input as WSDL -->
 		                    <wsdl>true</wsdl>
 		                    <!-- Input is not XML schema -->

@@ -1,0 +1,8 @@
+spring:  
+  application:
+    name: ppi-back
+  cloud:
+    config:
+      uri: http://config-service:8080
+      label: master
+      failFast: false

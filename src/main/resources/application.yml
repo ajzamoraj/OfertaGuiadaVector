@@ -1,0 +1,95 @@
+#server: 
+#    port: 8080
+#    tomcat:
+#        access_log_enabled: false
+#        basedir: target/tomcat
+#        
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    registerWithEureka: true
+#    enabled: false
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:8080/eureka   
+#
+#logging:
+#   file: ${spring.application.name}.log
+#   path: /var/log
+#   level:
+#      root: INFO
+#      org: 
+#          springframework: 
+#                    web: INFO
+#   
+#   
+#serenity:
+#  security:
+#    audience: SARASERENITY
+#    keyprovider:
+#      publicKeys:
+#        -
+#          alias: sts_SHA1withRSA
+#          encodedKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjAUCdrKSsrwkfzcqsiBhecKuTOriACZ0GkTh0OGY59bcYyox6nPCE2q9YBAEWtZkc9sDsy1BJq8PU748GOjSptUsWIYDy02Yzl8+rDsCp+wYSwixunE5sfL9wyHJE1qq79j7K3FcJiqsQUVdvZbB2oeDaS7s35JjiWCQUWkxMGuuuqGncXbFVfOOalpbL+QoT9Br9mbpsy6sQn17IVQA1M+YRzo1hEOauPGdPa1VwTcNz8cJ/CMzIJMK41Woi0q7VlguYTzO+cbLf+UQOW/L4D1TI2ipeLOMhuYgBsKOwXifiQnVDGVXEKoIaFqRvA71uGecdalnynaP4WoeTFvcZwIDAQAB           
+#
+#security:
+#  ignored: /public/**, /swagger-ui.html, /webjars/**, /swagger-resources/**, /v2/api-docs/**, /configuration/ui/**, /configuration/security/**, /health, /static/**
+#  basic:
+#    enable: true
+#
+#spring: 
+#  application:
+#    name: ppi-back  
+#  datasource:
+#    platform: Postgres
+#    driverClassName: org.postgresql.Driver
+##    DEV
+#    url: jdbc:postgresql://180.106.132.51:5432/ppi_workflow
+#    username: postgres
+#    password: Vector-2017
+#  jpa:
+#    show-sql: true    
+#
+#    #Local
+##    url: jdbc:postgresql://localhost:5432/springbootdb
+##    username: postgres
+##    password: jorge
+#        #Paas
+##    url: jdbc:postgresql://ppi-sql-ppi-form-test1-dev.appls.cap1.paas.gsnetcloud.corp:5432/ppi_workflow/;
+##    username: ppi_user
+##    password: ppi_user
+#
+#
+#
+#service:
+#  mail:
+#    mailserver: 
+#      host: mailintra.isban.gs.corp
+#      port: 25
+#      user: noreply@santander.com
+#  ftp:
+#    ftpserver:
+#      host: 180.106.133.42
+#      port: 21
+#      user: anonymous
+#      password:
+#      dir:        
+#            
+#app:
+#  security:
+#    # NO_SECURED | SECURED_BY_TOKEN
+#    type: NO_SECURED
+#    # When type = NO_SECURED prefix = /public
+#    # When type = SECURED_BY_TOKEN prefix = (empty)
+#    prefix: /public
+#    # Authorization | GS-AUTH-TOKEN    
+#    header: Authorization
+#    mock:
+#      user: XXTEST        
+#    domain: 
+#  imgdir: D:\STS_WORKSPACE_PPIQF\ppi-back\src\main\resources\static\images\
+#  pdfFileName: ./tmp/
+#  crossorigin: 
+#    generatepdf: https://ppi-front-ppi-oformsphase-ii-dev.appls.cap2.paas.gsnetcloud.corp
+#    analyzefile: https://ppi-front-ppi-oformsphase-ii-dev.appls.cap2.paas.gsnetcloud.corp  
+#  

@@ -40,7 +40,7 @@ public class SeguridadControllerInterceptor {
      * @param Securizar the request id
      * @throws CrisClientException
      */
-    @Before("@annotation(com.isb.wphg.security.aspect.Securizar) && @annotation(securizar)")
+    @Before("@annotation(com.isb.og.security.aspect.Securizar) && @annotation(securizar)")
     public final void seguridadInvocation(
         final JoinPoint jp,
         final Securizar securizar) throws Exception{
