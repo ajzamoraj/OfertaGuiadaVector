@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDCc="http://www.isban.es/webservices/TDCc" xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:cbtypes="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/cbTypes/vDraft" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/cbTypes/vDraft">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:import namespace="http://www.isban.es/webservices/TDCc" schemaLocation="./ws_TDCc.xsd"/>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="idGestora" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="nombreFon" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="codISIN" type="TDCs:CODIGO_ISIN_Type"/>
+            <xs:element minOccurs="0" name="tipoBusqueda" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cliente" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="canal" type="TDCs:CODIGO_DE_CANAL_Type"/>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_busFonFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_busFonFI</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoISIN" type="TDCs:CODIGO_ISIN_Type"/>
+            <xs:element minOccurs="0" name="indRepos" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaFondo" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaFondoFI_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_buscFonFI_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaFondoFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="fondo" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.FondoFI_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.FondoFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codISIN" type="TDCs:CODIGO_ISIN_Type"/>
+            <xs:element minOccurs="0" name="idFondo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="nombreFondo" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_buscFonFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codISINrepos" type="TDCs:CODIGO_ISIN_Type"/>
+            <xs:element minOccurs="0" name="finLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="nombre" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_BusGestFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_BusGestFI</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="clienteRepo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="indRep" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaGestora" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaGestoraFI_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_BuscGestFI_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaGestoraFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="gestora" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.GestoraFI_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.GestoraFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="nombreGesto" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="idGestora" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_BuscGestFI_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="clienteRepo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="finLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="modalidad" type="TDCs:MODALIDAD_TRASPASO_PLANES_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="indicadorOK" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="indOperPend" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanFonExtPP_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanFonExtPP_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="datoBusqueda" type="TDCs:NOMBRE_MEDIO_Type"/>
+            <xs:element minOccurs="0" name="idGesFon" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="indRespo" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="nombreRep" type="TDCs:NOMBRE_MEDIO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanExtPP_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanExtPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="indFinLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="listaPlan" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaPlanExtPP_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaPlanExtPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanExtPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="plan" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.PlanExtPP_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.PlanExtPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanExtPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="idPlan" type="TDCs:PLAN_AJENO_Type"/>
+            <xs:element minOccurs="0" name="nombrePlan" type="TDCs:NOMBRE_MEDIO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="datoBusqueda" type="TDCs:NOMBRE_MEDIO_Type"/>
+            <xs:element minOccurs="0" name="indReps" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaGestora" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaGestoraPP_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type"/>
+            <xs:element minOccurs="0" name="indFinLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaGestoraPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="gestora" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.GestoraPP_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.GestoraPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="idGestora" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="nombreGestora" type="TDCs:NOMBRE_MEDIO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.CalCondTraspFI_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.CalCondTraspFI_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="tipoTraspaso" type="TDCs:INDICADOR_GENERICO_Type"/>
+            <xs:element minOccurs="0" name="saldoDispo" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="valorLiquid" type="TDCc:VALOR_LIQUIDATIVO_FI_Type"/>
+            <xs:element minOccurs="0" name="importeFondo" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="participacionesTrasp" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="importeTrasp" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.CalcCondTraspFI_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.CalcCondTraspFI_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="importeCalc" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="participacionesCalc" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParciPP_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParciPP_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="tipoTrasp" type="TDCs:TIPO_UNIDAD_MVTO_FONDOS_Type"/>
+            <xs:element minOccurs="0" name="importe" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="participaciones" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="modalidad" type="TDCs:MODALIDAD_TRASPASO_PLANES_Type"/>
+            <xs:element minOccurs="0" name="subTipoProd" type="TDCc:SUBTIPO_DE_PRODUCTO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParcPP_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParcPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="importe" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="participaciones" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="ultFecVal" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="valorLiq" type="TDCc:VALOR_LIQUIDATIVO_PP_Type"/>
+            <xs:element minOccurs="0" name="indOperPend" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="indicadorOk" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="representado" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="empresa" type="TDCs:EMPRESA_Type"/>
+            <xs:element minOccurs="0" name="canal" type="TDCs:CODIGO_DE_CANAL_Type"/>
+            <xs:element minOccurs="0" name="memento" type="TDCs:SQLMEMENTO_Type"/>
+            <xs:element minOccurs="0" name="indRepo" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaRepresentantes" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaRepresentante_Type"/>
+            <xs:element minOccurs="0" name="memento" type="TDCs:SQLMEMENTO_Type"/>
+            <xs:element minOccurs="0" name="hayMas" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaRepresentante_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="representante" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Representante_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Representante_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="nombre" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+            <xs:element minOccurs="0" name="idRepresentante" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.RecContraFondos_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraFondos_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="empresa" type="TDCs:EMPRESA_Type"/>
+            <xs:element minOccurs="0" name="listaIntervinientes" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaIntervinientes_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaIntervinientes_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraFondos_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="interviniente" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Interviniente_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Interviniente_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraFondos_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cliente" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="tipIntervencion" type="TDCs:TIPO_DE_INTERVENCION_Type"/>
+            <xs:element minOccurs="0" name="formaIntervencion" type="TDCs:FORMA_DE_INTERVENCION_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_TrasFondos_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_TrasFondos</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="clienteRepo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="contratoRepo" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="indRep" type="TDCs:INDICADOR_GENERICO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaContrFondos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaContratoFondo_Type"/>
+            <xs:element minOccurs="0" name="reposicionamiento" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_TrasFondos_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaContratoFondo_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="contratoFondo" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ContratoFondo_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ContratoFondo_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="subTipo" type="TDCc:SUBTIPO_DE_PRODUCTO_Type"/>
+            <xs:element minOccurs="0" name="importe" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="fechaValLiq" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="valorLiq" type="TDCc:VALOR_LIQUIDATIVO_FI_Type"/>
+            <xs:element minOccurs="0" name="numPartDispo" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="numPartConsol" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="descProducto" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_TrasFondos_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="clienteRepo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="contratoRepo" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="finLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cliente" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="centro" type="TDCc:CENTRO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_recContPlaPe_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_recContPlaPe</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="indRepos" type="TDCs:INDICADOR_GENERICO_Type"/>
+            <xs:element minOccurs="0" name="contratoRepo" type="TDCc:CONTRATO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaPlan" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaPlanTitular_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_recContrPlaPen_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaPlanTitular_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="plan" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.PlanTitular_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.PlanTitular_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="contrato" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="ultValLiq" type="TDCc:VALOR_LIQUIDATIVO_PP_Type"/>
+            <xs:element minOccurs="0" name="fecValLiq" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="numPartPart" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="impPartPart" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="numPartBen" type="TDCs:PARTICIPACIONES_RETENIDAS_Type"/>
+            <xs:element minOccurs="0" name="impPartBen" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="tipoPlan" type="TDCs:TIPO_PLAN_GESTORA_Type"/>
+            <xs:element minOccurs="0" name="descProducto" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="subtipo" type="TDCc:SUBTIPO_DE_PRODUCTO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Pag_S_recContrPlaPen_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="finLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="contratoRepo" type="TDCc:CONTRATO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosPP_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="indFinLista" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="listaFondo" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaFondoPP_Type"/>
+            <xs:element minOccurs="0" name="repos" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaFondoPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="fondo" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.FondoPP_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.FondoPP_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosPP_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codFondo" type="TDCs:FONDO_AJENO_Type"/>
+            <xs:element minOccurs="0" name="idFondo" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="nombreFondo" type="TDCs:NOMBRE_MEDIO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cliente" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="empresa" type="TDCs:EMPRESA_Type"/>
+            <xs:element minOccurs="0" name="tipoIntevencion" type="TDCs:TIPO_DE_INTERVENCION_Type"/>
+            <xs:element minOccurs="0" name="divisa" type="TDCs:DIVISA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="listaCuentas" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ListaCuentas_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.ListaCuentas_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="cuenta" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Cuenta_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.sanogu.serviciosdirog.e.f.cb.Cuenta_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IBAN" type="TDCs:CUENTA_GENERAL_Type"/>
+            <xs:element minOccurs="0" name="descTipoInter" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            <xs:element minOccurs="0" name="descFormaDispo" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            <xs:element minOccurs="0" name="saldo" type="TDCc:IMPORTE_Type"/>
+            <xs:element minOccurs="0" name="fechaSaldo" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="contratoPartenon" type="TDCc:CONTRATO_Type"/>
+            <xs:element minOccurs="0" name="tipoIntervencion" type="TDCs:TIPO_DE_INTERVENCION_Type"/>
+            <xs:element minOccurs="0" name="formaIntervencion" type="TDCs:FORMA_DE_INTERVENCION_Type"/>
+            <xs:element minOccurs="0" name="subTipo" type="TDCc:SUBTIPO_DE_PRODUCTO_Type"/>
+            <xs:element minOccurs="0" name="descProducto" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:cbtypes="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/cbTypes/vDraft" xmlns:fault="http://www.gruposantander.es/webservices/genericFault" xmlns:faultExceptions="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/functionalFaults/vDraft" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft">
+    <documentation>Servicos direccionamiento oferta guiada</documentation>
+    <types>
+        <xs:schema targetNamespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft">
+            <xs:import namespace="http://www.gruposantander.es/webservices/genericFault" schemaLocation="./schemas/fault.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/functionalFaults/vDraft" schemaLocation="./schemas/ServDirecOfeGui_functionalFaults_vDraft.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/cbTypes/vDraft" schemaLocation="./schemas/ServDirecOfeGui_cb_types_vDraft.xsd"/>
+            <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./schemas/ws_TDCs.xsd"/>
+            <xs:element name="buscFondosFI">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de la seguridad.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposicionamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_busFonFI_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos reposicionamiento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscFondosFIResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosFI_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscGestoraFI">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de la seguirdad.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposicionamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_BusGestFI_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de reposicionamiento de la operación</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscGestoraFIResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraFI_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="evalCondTraspTotPP">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="seguridad" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguiridad de la operacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="evalCondTraspTotPPResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTraspTotPP_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscPlanExtPP">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanFonExtPP_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>seguiridad de la operacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposiconamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb datos de reposiconamiento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscPlanExtPPResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanExtPP_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscGestoraPP">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguridad de la operacion</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposicionamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de reposicionamiento de la operacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscGestoraPPResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscGestoraPP_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="calCondTraspFI">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.CalCondTraspFI_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguirdad de la operación.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="calCondTraspFIResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.CalcCondTraspFI_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="evalCondTrasParcPP">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParciPP_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="seguridad" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de seguridad</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="evalCondTrasParcPPResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.EvalCondTrasParcPP_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="obtRepresentantes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="obtRepresentantesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ObtRepresentantes_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="recContraFondos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.RecContraFondos_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguridad de la operación.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="repos" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_TrasFondos_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de reposicionamiento de la operación.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="recContraFondosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.RecContrFondos_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="recContraPlaPen">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguridad de la operacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposicionamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_recContPlaPe_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos para la paginacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="recContraPlaPenResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.RecContraPlanPen_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscFondosPP">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscPlanFonExtPP_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb seguridad de la operacion.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="reposicionamiento" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.Pag_E_GeFonPlanEx_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb datos de reposionamiento.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="buscFondosPPResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.BuscFondosPP_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="obtenerCuentas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entrada" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_E_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de entrada.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="entradaSeg" nillable="true" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.SeguridadOG_Type">
+                            <xs:annotation>
+                                <xs:documentation>datos de seguiridad de la operacion</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute fixed="ServDirecOfeGui" name="facade" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="obtenerCuentasResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="methodResult" type="cbtypes:com.isb.sanogu.serviciosdirog.e.f.cb.ObtenerCuentas_S_Type">
+                            <xs:annotation>
+                                <xs:documentation>cb con los datos de salida.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+    <message name="buscFondosFI_Input">
+        <part element="tns:buscFondosFI" name="buscFondosFI_InputPart"/>
+    </message>
+    <message name="buscFondosFI_Output">
+        <part element="tns:buscFondosFIResponse" name="buscFondosFI_OutputPart"/>
+    </message>
+    <message name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscFondosFI_Fault">
+        <part element="fault:Exception" name="buscFondosFI_FaultPart"/>
+    </message>
+    <message name="buscGestoraFI_Input">
+        <part element="tns:buscGestoraFI" name="buscGestoraFI_InputPart"/>
+    </message>
+    <message name="buscGestoraFI_Output">
+        <part element="tns:buscGestoraFIResponse" name="buscGestoraFI_OutputPart"/>
+    </message>
+    <message name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscGestoraFI_Fault">
+        <part element="fault:Exception" name="buscGestoraFI_FaultPart"/>
+    </message>
+    <message name="evalCondTraspTotPP_Input">
+        <part element="tns:evalCondTraspTotPP" name="evalCondTraspTotPP_InputPart"/>
+    </message>
+    <message name="evalCondTraspTotPP_Output">
+        <part element="tns:evalCondTraspTotPPResponse" name="evalCondTraspTotPP_OutputPart"/>
+    </message>
+    <message name="evalCondTraspTotPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="evalCondTraspTotPP_Fault">
+        <part element="fault:Exception" name="evalCondTraspTotPP_FaultPart"/>
+    </message>
+    <message name="buscPlanExtPP_Input">
+        <part element="tns:buscPlanExtPP" name="buscPlanExtPP_InputPart"/>
+    </message>
+    <message name="buscPlanExtPP_Output">
+        <part element="tns:buscPlanExtPPResponse" name="buscPlanExtPP_OutputPart"/>
+    </message>
+    <message name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscPlanExtPP_Fault">
+        <part element="fault:Exception" name="buscPlanExtPP_FaultPart"/>
+    </message>
+    <message name="buscGestoraPP_Input">
+        <part element="tns:buscGestoraPP" name="buscGestoraPP_InputPart"/>
+    </message>
+    <message name="buscGestoraPP_Output">
+        <part element="tns:buscGestoraPPResponse" name="buscGestoraPP_OutputPart"/>
+    </message>
+    <message name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscGestoraPP_Fault">
+        <part element="fault:Exception" name="buscGestoraPP_FaultPart"/>
+    </message>
+    <message name="calCondTraspFI_Input">
+        <part element="tns:calCondTraspFI" name="calCondTraspFI_InputPart"/>
+    </message>
+    <message name="calCondTraspFI_Output">
+        <part element="tns:calCondTraspFIResponse" name="calCondTraspFI_OutputPart"/>
+    </message>
+    <message name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido" name="com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_FaultPart"/>
+    </message>
+    <message name="calCondTraspFI_Fault">
+        <part element="fault:Exception" name="calCondTraspFI_FaultPart"/>
+    </message>
+    <message name="evalCondTrasParcPP_Input">
+        <part element="tns:evalCondTrasParcPP" name="evalCondTrasParcPP_InputPart"/>
+    </message>
+    <message name="evalCondTrasParcPP_Output">
+        <part element="tns:evalCondTrasParcPPResponse" name="evalCondTrasParcPP_OutputPart"/>
+    </message>
+    <message name="evalCondTrasParcPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="evalCondTrasParcPP_Fault">
+        <part element="fault:Exception" name="evalCondTrasParcPP_FaultPart"/>
+    </message>
+    <message name="obtRepresentantes_Input">
+        <part element="tns:obtRepresentantes" name="obtRepresentantes_InputPart"/>
+    </message>
+    <message name="obtRepresentantes_Output">
+        <part element="tns:obtRepresentantesResponse" name="obtRepresentantes_OutputPart"/>
+    </message>
+    <message name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="obtRepresentantes_Fault">
+        <part element="fault:Exception" name="obtRepresentantes_FaultPart"/>
+    </message>
+    <message name="recContraFondos_Input">
+        <part element="tns:recContraFondos" name="recContraFondos_InputPart"/>
+    </message>
+    <message name="recContraFondos_Output">
+        <part element="tns:recContraFondosResponse" name="recContraFondos_OutputPart"/>
+    </message>
+    <message name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="recContraFondos_Fault">
+        <part element="fault:Exception" name="recContraFondos_FaultPart"/>
+    </message>
+    <message name="recContraPlaPen_Input">
+        <part element="tns:recContraPlaPen" name="recContraPlaPen_InputPart"/>
+    </message>
+    <message name="recContraPlaPen_Output">
+        <part element="tns:recContraPlaPenResponse" name="recContraPlaPen_OutputPart"/>
+    </message>
+    <message name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="recContraPlaPen_Fault">
+        <part element="fault:Exception" name="recContraPlaPen_FaultPart"/>
+    </message>
+    <message name="buscFondosPP_Input">
+        <part element="tns:buscFondosPP" name="buscFondosPP_InputPart"/>
+    </message>
+    <message name="buscFondosPP_Output">
+        <part element="tns:buscFondosPPResponse" name="buscFondosPP_OutputPart"/>
+    </message>
+    <message name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="buscFondosPP_Fault">
+        <part element="fault:Exception" name="buscFondosPP_FaultPart"/>
+    </message>
+    <message name="obtenerCuentas_Input">
+        <part element="tns:obtenerCuentas" name="obtenerCuentas_InputPart"/>
+    </message>
+    <message name="obtenerCuentas_Output">
+        <part element="tns:obtenerCuentasResponse" name="obtenerCuentas_OutputPart"/>
+    </message>
+    <message name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+        <part element="faultExceptions:com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E" name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_FaultPart"/>
+    </message>
+    <message name="obtenerCuentas_Fault">
+        <part element="fault:Exception" name="obtenerCuentas_FaultPart"/>
+    </message>
+    <portType name="ServDirecOfeGuiPortTypeHTTP">
+        <operation name="obtRepresentantes">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve los representantes de una persona fisica.</documentation>
+            <input message="tns:obtRepresentantes_Input" name="obtRepresentantes_Input"/>
+            <output message="tns:obtRepresentantes_Output" name="obtRepresentantes_Output"/>
+            <fault message="tns:obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:obtRepresentantes_Fault" name="obtRepresentantes_Fault"/>
+        </operation>
+        <operation name="buscGestoraFI">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+metodo que devuelve las gestoras de fondos.</documentation>
+            <input message="tns:buscGestoraFI_Input" name="buscGestoraFI_Input"/>
+            <output message="tns:buscGestoraFI_Output" name="buscGestoraFI_Output"/>
+            <fault message="tns:buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscGestoraFI_Fault" name="buscGestoraFI_Fault"/>
+        </operation>
+        <operation name="obtenerCuentas">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve los datos de las cuentas del cliente en las que figura como titular, representante y tutor.</documentation>
+            <input message="tns:obtenerCuentas_Input" name="obtenerCuentas_Input"/>
+            <output message="tns:obtenerCuentas_Output" name="obtenerCuentas_Output"/>
+            <fault message="tns:obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:obtenerCuentas_Fault" name="obtenerCuentas_Fault"/>
+        </operation>
+        <operation name="recContraFondos">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve un listado con los contratos de fondos que tiene el cliente.</documentation>
+            <input message="tns:recContraFondos_Input" name="recContraFondos_Input"/>
+            <output message="tns:recContraFondos_Output" name="recContraFondos_Output"/>
+            <fault message="tns:recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:recContraFondos_Fault" name="recContraFondos_Fault"/>
+        </operation>
+        <operation name="recContraPlaPen">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve un listado con los contratos de planes que tiene el cliente.</documentation>
+            <input message="tns:recContraPlaPen_Input" name="recContraPlaPen_Input"/>
+            <output message="tns:recContraPlaPen_Output" name="recContraPlaPen_Output"/>
+            <fault message="tns:recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:recContraPlaPen_Fault" name="recContraPlaPen_Fault"/>
+        </operation>
+        <operation name="buscGestoraPP">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios..&#13;
+metodo que devuelve las gestoras de planes.</documentation>
+            <input message="tns:buscGestoraPP_Input" name="buscGestoraPP_Input"/>
+            <output message="tns:buscGestoraPP_Output" name="buscGestoraPP_Output"/>
+            <fault message="tns:buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscGestoraPP_Fault" name="buscGestoraPP_Fault"/>
+        </operation>
+        <operation name="buscFondosFI">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve los fondos asociados a una gestora.</documentation>
+            <input message="tns:buscFondosFI_Input" name="buscFondosFI_Input"/>
+            <output message="tns:buscFondosFI_Output" name="buscFondosFI_Output"/>
+            <fault message="tns:buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscFondosFI_Fault" name="buscFondosFI_Fault"/>
+        </operation>
+        <operation name="evalCondTraspTotPP">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que evalua las condiciones de un traspaso total.</documentation>
+            <input message="tns:evalCondTraspTotPP_Input" name="evalCondTraspTotPP_Input"/>
+            <output message="tns:evalCondTraspTotPP_Output" name="evalCondTraspTotPP_Output"/>
+            <fault message="tns:evalCondTraspTotPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="evalCondTraspTotPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:evalCondTraspTotPP_Fault" name="evalCondTraspTotPP_Fault"/>
+        </operation>
+        <operation name="calCondTraspFI">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Calcula que el saldo en importe/participaciones es suficiente para realizar el traspaso.</documentation>
+            <input message="tns:calCondTraspFI_Input" name="calCondTraspFI_Input"/>
+            <output message="tns:calCondTraspFI_Output" name="calCondTraspFI_Output"/>
+            <fault message="tns:calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_Fault" name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_Fault"/>
+            <fault message="tns:calCondTraspFI_Fault" name="calCondTraspFI_Fault"/>
+        </operation>
+        <operation name="buscFondosPP">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve los fondos asociados a una gestora.</documentation>
+            <input message="tns:buscFondosPP_Input" name="buscFondosPP_Input"/>
+            <output message="tns:buscFondosPP_Output" name="buscFondosPP_Output"/>
+            <fault message="tns:buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscFondosPP_Fault" name="buscFondosPP_Fault"/>
+        </operation>
+        <operation name="buscPlanExtPP">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que devuelve los planes asociados a un fondo.</documentation>
+            <input message="tns:buscPlanExtPP_Input" name="buscPlanExtPP_Input"/>
+            <output message="tns:buscPlanExtPP_Output" name="buscPlanExtPP_Output"/>
+            <fault message="tns:buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:buscPlanExtPP_Fault" name="buscPlanExtPP_Fault"/>
+        </operation>
+        <operation name="evalCondTrasParcPP">
+            <documentation>Seguridad: NO_SEC Sin seguridad&#13;
+Parámetros: Todos los datos son obligatorios.&#13;
+Metodo que evalua las condiciones de un traspaso parcial.</documentation>
+            <input message="tns:evalCondTrasParcPP_Input" name="evalCondTrasParcPP_Input"/>
+            <output message="tns:evalCondTrasParcPP_Output" name="evalCondTrasParcPP_Output"/>
+            <fault message="tns:evalCondTrasParcPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" name="evalCondTrasParcPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault"/>
+            <fault message="tns:evalCondTrasParcPP_Fault" name="evalCondTrasParcPP_Fault"/>
+        </operation>
+    </portType>
+    <binding name="ServDirecOfeGuiSoapBindingHTTP" type="tns:ServDirecOfeGuiPortTypeHTTP">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="obtRepresentantes">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/obtRepresentantes" style="document"/>
+            <input name="obtRepresentantes_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="obtRepresentantes_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="obtRepresentantes_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="obtRepresentantes_Fault">
+                <soap:fault name="obtRepresentantes_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="buscGestoraFI">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/buscGestoraFI" style="document"/>
+            <input name="buscGestoraFI_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="buscGestoraFI_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscGestoraFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscGestoraFI_Fault">
+                <soap:fault name="buscGestoraFI_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="obtenerCuentas">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/obtenerCuentas" style="document"/>
+            <input name="obtenerCuentas_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="obtenerCuentas_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="obtenerCuentas_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="obtenerCuentas_Fault">
+                <soap:fault name="obtenerCuentas_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="recContraFondos">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/recContraFondos" style="document"/>
+            <input name="recContraFondos_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="recContraFondos_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="recContraFondos_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="recContraFondos_Fault">
+                <soap:fault name="recContraFondos_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="recContraPlaPen">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/recContraPlaPen" style="document"/>
+            <input name="recContraPlaPen_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="recContraPlaPen_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="recContraPlaPen_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="recContraPlaPen_Fault">
+                <soap:fault name="recContraPlaPen_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="buscGestoraPP">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/buscGestoraPP" style="document"/>
+            <input name="buscGestoraPP_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="buscGestoraPP_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscGestoraPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscGestoraPP_Fault">
+                <soap:fault name="buscGestoraPP_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="buscFondosFI">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/buscFondosFI" style="document"/>
+            <input name="buscFondosFI_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="buscFondosFI_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscFondosFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscFondosFI_Fault">
+                <soap:fault name="buscFondosFI_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="evalCondTraspTotPP">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/evalCondTraspTotPP" style="document"/>
+            <input name="evalCondTraspTotPP_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="evalCondTraspTotPP_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="evalCondTraspTotPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="evalCondTraspTotPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="evalCondTraspTotPP_Fault">
+                <soap:fault name="evalCondTraspTotPP_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="calCondTraspFI">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/calCondTraspFI" style="document"/>
+            <input name="calCondTraspFI_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="calCondTraspFI_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_Fault">
+                <soap:fault name="calCondTraspFI_com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido_Fault" use="literal"/>
+            </fault>
+            <fault name="calCondTraspFI_Fault">
+                <soap:fault name="calCondTraspFI_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="buscFondosPP">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/buscFondosPP" style="document"/>
+            <input name="buscFondosPP_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="buscFondosPP_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscFondosPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscFondosPP_Fault">
+                <soap:fault name="buscFondosPP_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="buscPlanExtPP">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/buscPlanExtPP" style="document"/>
+            <input name="buscPlanExtPP_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="buscPlanExtPP_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="buscPlanExtPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="buscPlanExtPP_Fault">
+                <soap:fault name="buscPlanExtPP_Fault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="evalCondTrasParcPP">
+            <soap:operation soapAction="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/ServDirecOfeGui/vDraft/evalCondTrasParcPP" style="document"/>
+            <input name="evalCondTrasParcPP_Input">
+                <soap:body use="literal"/>
+            </input>
+            <output name="evalCondTrasParcPP_Output">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="evalCondTrasParcPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault">
+                <soap:fault name="evalCondTrasParcPP_com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E_Fault" use="literal"/>
+            </fault>
+            <fault name="evalCondTrasParcPP_Fault">
+                <soap:fault name="evalCondTrasParcPP_Fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="ServDirecOfeGui_Service">
+        <port binding="tns:ServDirecOfeGuiSoapBindingHTTP" name="ServDirecOfeGuiPortHTTP">
+            <soap:address location="http://180.102.42.100:8080/SANOGU_ESCE/ws/SANOGU_Def_Listener"/>
+        </port>
+    </service>
+</definitions>

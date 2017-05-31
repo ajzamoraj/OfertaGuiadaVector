@@ -139,6 +139,28 @@
 		                    <!-- Don't clear output directory on each run -->
 		                    <clearOutputDir>false</clearOutputDir>
 		                </configuration>
+                    </execution> 
+                    <execution>
+                        <id>ofegui</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+	                    <configuration>
+		                    <!-- Package to store the generated file -->
+		                    <packageName>com.isb.og.wsdl.ofegui</packageName>
+		                    <!-- Treat the input as WSDL -->
+		                    <wsdl>true</wsdl>
+		                    <!-- Input is not XML schema -->
+		                    <xmlschema>false</xmlschema>
+		                    <!-- The WSDL file that you saved earlier -->
+		                    <schemaFiles>ServDirecOfeGui_vDraft.wsdl</schemaFiles>
+		                    <!-- The location of the WSDL file -->
+		                    <schemaDirectory>${project.basedir}/src/main/resources/wsdl/ofegui</schemaDirectory>
+		                    <!-- The output directory to store the generated Java files -->
+		                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+		                    <!-- Don't clear output directory on each run -->
+		                    <clearOutputDir>false</clearOutputDir>
+		                </configuration>
                     </execution>                        
                 </executions>
             </plugin>

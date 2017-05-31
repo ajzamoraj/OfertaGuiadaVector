@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDC_Simple="http://www.isban.es/webservices/TDCs" xmlns:tns="http://www.isban.es/webservices/TDCc" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/TDCc">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:complexType name="SUBTIPO_DE_PRODUCTO_Type">
+          <xs:sequence>
+               <xs:element name="TIPO_DE_PRODUCTO" type="tns:TIPO_DE_PRODUCTO_Type"/>
+               <xs:element name="SUBTIPO_DE_PRODUCTO" type="TDC_Simple:COD_SUBTIPO_PRODUCTO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="CENTRO_Type">
+          <xs:sequence>
+               <xs:element name="EMPRESA" type="TDC_Simple:EMPRESA_Type"/>
+               <xs:element name="CENTRO" type="TDC_Simple:CODIGO_CENTRO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="VALOR_LIQUIDATIVO_PP_Type">
+          <xs:sequence>
+               <xs:element name="VALOR_LIQUIDATIVO" type="TDC_Simple:VALOR_DE_PARTICIPACION_Type"/>
+               <xs:element name="DIVISA" type="TDC_Simple:DIVISA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="CONTRATO_Type">
+          <xs:sequence>
+               <xs:element name="CENTRO" type="tns:CENTRO_DE_CONTRATO_Type"/>
+               <xs:element name="PRODUCTO" type="TDC_Simple:CODIGO_DE_PRODUCTO_Type"/>
+               <xs:element name="NUMERO_DE_CONTRATO" type="TDC_Simple:NUMERO_CUENTA_INTERNO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="NUM_PERSONA_CLIENTE_Type">
+          <xs:sequence>
+               <xs:element name="TIPO_DE_PERSONA" type="TDC_Simple:TIPO_DE_PERSONA_Type"/>
+               <xs:element name="CODIGO_DE_PERSONA" type="TDC_Simple:NUMERO_DE_PERSONA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="CENTRO_DE_CONTRATO_Type">
+          <xs:sequence>
+               <xs:element name="EMPRESA" type="TDC_Simple:EMPRESA_DEL_CENTRO_Type"/>
+               <xs:element name="CENTRO" type="TDC_Simple:CODIGO_CENTRO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="IMPORTE_Type">
+          <xs:sequence>
+               <xs:element name="IMPORTE" type="TDC_Simple:NUMERO_IMPORTE_Type"/>
+               <xs:element name="DIVISA" type="TDC_Simple:DIVISA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="VALOR_LIQUIDATIVO_FI_Type">
+          <xs:sequence>
+               <xs:element name="VALOR_LIQUIDATIVO" type="TDC_Simple:VALOR_DE_PARTICIPACION_Type"/>
+               <xs:element name="DIVISA" type="TDC_Simple:DIVISA_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+    <xs:complexType name="TIPO_DE_PRODUCTO_Type">
+          <xs:sequence>
+               <xs:element name="EMPRESA" type="TDC_Simple:EMPRESA_DEL_PRODUCTO_Type"/>
+               <xs:element name="TIPO_DE_PRODUCTO" type="TDC_Simple:CODIGO_DE_PRODUCTO_Type"/>
+          </xs:sequence>
+     </xs:complexType>
+</xs:schema>

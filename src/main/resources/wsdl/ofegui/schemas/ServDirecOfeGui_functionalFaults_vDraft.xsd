@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:tns="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/functionalFaults/vDraft" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/SANOGU/Serviciosdirog_e/F_sanogu_serviciosdirog_e/functionalFaults/vDraft">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:element name="com.isb.sanogu.serviciosdirog.e.f.exc.NoHayDatos_ServiciosDirOG_E">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="codError" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="mensaje" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.sanogu.serviciosdirog.e.f.exc.General_ServiciosDirOG_E">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="codError" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="mensaje" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.sanogu.serviciosdirog.e.f.exc.TraspsoNoPermitido">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="error" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="mensaje" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
